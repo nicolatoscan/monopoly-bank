@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-playing',
   templateUrl: './playing.component.html',
-  styleUrls: ['./playing.component.css']
+  styleUrls: ['./playing.component.less']
 })
 export class PlayingComponent implements OnInit {
 
