@@ -1,0 +1,20 @@
+<div *ngIf="land" class="land-info-wrapper">
+  <h2 [style.background-color]="land.color">{{land.name}}</h2>
+  <div class="info-panel">
+    <p>
+      Value: {{land.value}}
+      <br> Costo: {{CostOnLand()}}</p>
+    <div class="hotel-hoses-handler">
+      <b>Houses</b>
+      <button (click)="addHouse(-1)">-</button>
+      <p>{{nHouses}}</p>
+      <button (click)="addHouse(+1)">+</button>
+    </div>
+    <div class="hotel-hoses-handler">
+        <b>Hotels</b>
+        <button (click)="addHotel(-1)">-</button>
+        <p>{{nHotels}}</p>
+        <button (click)="addHotel(+1)">+</button>
+      </div>
+  </div>
+</div>

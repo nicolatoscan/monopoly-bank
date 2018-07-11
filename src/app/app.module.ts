@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { PlayingComponent } from './components/playing/playing.component';
 import { PlayerInfoComponent } from './components/player-info/player-info.component';
 import { InfoPanelComponent } from './components/info-panel/info-panel.component';
+import { LandInfoComponent } from './components/land-info/land-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayingComponent,
     PlayerInfoComponent,
-    InfoPanelComponent
+    InfoPanelComponent,
+    LandInfoComponent
   ],
   imports: [
     BrowserModule,

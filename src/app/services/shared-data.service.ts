@@ -118,7 +118,20 @@ export class SharedDataService {
     })
 
   }
+  public TransferMoney(value: number, fromPlayerIndex: number, toPlayerIndex?: number) {
+    let fromPlayer = this.players.FirstOrDefault(p => p.index == fromPlayerIndex)
+    let toPlayer = null;
+    if (toPlayerIndex !== null && toPlayerIndex !== undefined) {
+      toPlayer = this.players.FirstOrDefault(p => p.index == toPlayerIndex)
+    }
 
+    if (fromPlayer) {
+      fromPlayer.balance -= +value;
+    }
+    if (toPlayer) {
+      toPlayer.balance += +value;
+    }
+  }
 
   // ----- LANDS
   public get Lands() {

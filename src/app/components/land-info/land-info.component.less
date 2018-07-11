@@ -1,0 +1,42 @@
+.land-info-wrapper {
+    width: 150px;
+    border: 1px solid black;
+
+    h2 {
+        margin: 3px;
+        padding: 5px;
+        font-size: 14px;
+        text-align: center;
+        color: white;
+    }
+
+    .info-panel  {
+        margin: 15px 10px;
+        p {
+            margin: 0;
+        }
+        
+        .hotel-hoses-handler {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            b {
+                width: 100%;
+            }
+            button {
+                width: 40%;
+                height: 30px;
+                font-size: 25px;
+                &:active {
+                    filter: brightness(95%);
+                }
+            }
+            p {
+                width: 20%;
+                line-height: 30px;
+                text-align: center;
+            }
+        }
+
+    }
+}

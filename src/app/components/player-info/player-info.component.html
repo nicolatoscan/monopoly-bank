@@ -3,15 +3,17 @@
   <div class="money-control-wrapper">
     <p class="balance-p">{{player.balance}} €</p>
 
-    <input type="number" placeholder="Soldi da cambiare">
+    <input #moneyInput type="number" placeholder="Soldi da cambiare">
     <div class="money-option-wrapper">
-      <button>Add</button>
-      <button>Remove</button>
-      <button>Send to</button>
-      <select>
-        <option *ngFor="let p of players.ToArray()">{{p.name}}</option>
+      <button class="btn-remove" (click)="sendMoney(+moneyInput.value)">Remove</button>
+      <button class="btn-add" (click)="sendMoney(-moneyInput.value)">Add</button>
+      <select class="select-send" #bb>
+        <option value="{{p.index}}" *ngFor="let p of players.ToArray()">{{p.name}}</option>
       </select>
+      <button class="btn-send" (click)="sendMoney(+moneyInput.value, bb.value)">Send</button>
     </div>
   </div>
-
+  <app-land-info
+    [nHouses]="2" [nHotels]="1" [player]="player" [land]="land"
+    class="app-land-info"></app-land-info>
 </div>

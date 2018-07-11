@@ -32,6 +32,8 @@ export class DataSourceService {
       catchError(this.getError),
       map(players => {
         players.forEach(p => {
+          p.index = Number(p.index)
+          p.balance = Number(p.balance)
           p.lands = new List<ILand>([])
         })
         return players;
@@ -41,7 +43,15 @@ export class DataSourceService {
 
   public GetLands(): Observable<ILand[]> {
     return this.http.get('/assets/data/lands.json').pipe(
-      catchError(this.getError)
+      catchError(this.getError),
+      map(lands => {
+        lands.forEach(l => {
+          l.index = Number(l.index)
+          l.value = Number(l.value)
+          l.costs = new List(l.costs).Select(c => Number(c)).ToArray()
+        });
+        return lands;
+      })
     )
   };
 }
