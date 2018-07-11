@@ -1,0 +1,55 @@
+.content-container {
+    padding: 1em;
+
+    > .money-control-wrapper {
+        width: 90%;
+        max-width: 500px;
+        margin: auto;
+        .balance-p {
+            font-size: 3em;
+            margin: 0;
+            text-align: center;
+        }
+
+        input {
+            margin-top: 1.5em;
+            width: 100%;
+            font-size: 1.2em;
+            border: none;
+            border-bottom: 1px solid #CCC;
+            padding: 0 0.6em;
+            outline: none;
+            text-align: right;
+            &:focus {
+                border-color: #4CC;
+            }
+        }
+
+        .money-option-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            button, select {
+                width: 45%;
+                margin: 5px;
+                font-size: 1.1em;
+                padding: 0.3em;
+            }
+
+            button {
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: #4CC;
+                color: white;
+                transition: background-color 0.1s ease-in;
+
+                &:active {
+                background-color: #2AA;
+
+                }
+            }
+        }
+
+    }
+}

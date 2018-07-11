@@ -1,0 +1,23 @@
+[
+    {
+        "index": 0,
+        "name": "Nicola Toscan",
+        "balance": 15000,
+        "lands": []
+    },{
+        "index": 1,
+        "name": "Luigi Bisa",
+        "balance": 15000,
+        "lands": []
+    },{
+        "index": 2,
+        "name": "Samuel Peron",
+        "balance": 15000,
+        "lands": []
+    },{
+        "index": 3,
+        "name": "Marco Piccolo",
+        "balance": 15000,
+        "lands": []
+    }
+]

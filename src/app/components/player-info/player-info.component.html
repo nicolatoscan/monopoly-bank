@@ -1,3 +1,17 @@
-<p>
-  player-info works!
-</p>
+<div class="content-container">
+
+  <div class="money-control-wrapper">
+    <p class="balance-p">{{player.balance}} €</p>
+
+    <input type="number" placeholder="Soldi da cambiare">
+    <div class="money-option-wrapper">
+      <button>Add</button>
+      <button>Remove</button>
+      <button>Send to</button>
+      <select>
+        <option *ngFor="let p of players.ToArray()">{{p.name}}</option>
+      </select>
+    </div>
+  </div>
+
+</div>

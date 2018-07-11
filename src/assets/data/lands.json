@@ -1,0 +1,171 @@
+[
+    {
+        "index": 0,
+        "name": "Gdynia",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#663300"
+    },{
+        "index": 1,
+        "name": "Taipei",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#663300"
+    },{
+        "index": 0,
+        "name": "Tokyo",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#00ffff"
+    },{
+        "index": 0,
+        "name": "Barcelona",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#00ffff"
+    },{
+        "index": 0,
+        "name": "Athens",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#00ffff"
+    },{
+        "index": 0,
+        "name": "Istanbul",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff0066"
+    },{
+        "index": 0,
+        "name": "Kyiv",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff0066"
+    },{
+        "index": 0,
+        "name": "Toronto",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff0066"
+    },{
+        "index": 0,
+        "name": "Rome",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff9900"
+    },{
+        "index": 0,
+        "name": "Shanghai",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff9900"
+    },{
+        "index": 0,
+        "name": "Vancouver",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff9900"
+    },{
+        "index": 0,
+        "name": "Sydney",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff3300"
+    },{
+        "index": 0,
+        "name": "New York",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff3300"
+    },{
+        "index": 0,
+        "name": "London",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#ff3300"
+    },{
+        "index": 0,
+        "name": "Beijing",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#d9d900"
+    },{
+        "index": 0,
+        "name": "Hong Kong",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#d9d900"
+    },{
+        "index": 0,
+        "name": "Jerusalem",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#d9d900"
+    },{
+        "index": 0,
+        "name": "Paris",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#009933"
+    },{
+        "index": 0,
+        "name": "Belgrade",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#009933"
+    },{
+        "index": 0,
+        "name": "Cape Town",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#009933"
+    },{
+        "index": 0,
+        "name": "Riga",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#0033cc"
+    },{
+        "index": 0,
+        "name": "Montreal",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#0033cc"
+    },{
+        "index": 0,
+        "name": "Indusry 1",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#000000"
+    },{
+        "index": 0,
+        "name": "Indusry 2",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#000000"
+    },{
+        "index": 0,
+        "name": "Indusry 3",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#000000"
+    },{
+        "index": 0,
+        "name": "Indusry 4",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#000000"
+    },{
+        "index": 0,
+        "name": "Service 1",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#999999"
+    },{
+        "index": 0,
+        "name": "Service 2",
+        "value": 0,
+        "costs": [ 0, 0, 0, 0, 0 ],
+        "color": "#999999"
+    }
+]

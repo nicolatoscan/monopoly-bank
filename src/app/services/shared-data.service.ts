@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ILand, IHistory, Player } from '../models/_index';
+import { ILand, IHistory, Player, IPlayer } from '../models/_index';
 import { List } from 'linqts'
 import { SharedStringsService } from './shared-strings.service';
 
@@ -31,6 +31,11 @@ export class SharedDataService {
     localStorage.setItem('players', JSON.stringify(this.players.ToArray()))
     localStorage.setItem('lands', JSON.stringify(this.lands.ToArray()))
     localStorage.setItem('history', JSON.stringify(this.history.ToArray()))
+  }
+
+  public LoadAllForNew(players: IPlayer[], lands: ILand[]) {
+    this.players = new List(players).Select(p => new Player(p))
+    this.lands = new List(lands);
   }
 
   // ----- PLAYERS

@@ -1,5 +1,11 @@
-<p>
-  playing works!
-</p>
+<div class="app-container">
+  <header>
+    <select [(ngModel)]="currentPlayer">
+      <option
+      *ngFor="let p of players.ToArray()"
+      [ngValue]="p">{{p.name}}</option>
+    </select>
+  </header>
+  <app-player-info [player]="currentPlayer" *ngIf="currentPlayer != null" class="player-info-wrapper"></app-player-info>
+</div>
 <app-info-panel></app-info-panel>
-<app-player-info></app-player-info>
