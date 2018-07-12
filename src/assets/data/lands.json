@@ -2,170 +2,226 @@
     {
         "index": 0,
         "name": "Gdynia",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 600,
+        "mortgage": 300,
+        "housePrice": 500,
+        "costs": [ 20, 100, 300, 900, 1600, 2500 ],
         "color": "#663300"
     },{
         "index": 1,
         "name": "Taipei",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 600,
+        "mortgage": 300,
+        "housePrice": 500,
+        "costs": [ 40, 200, 600, 1800, 3200, 4500 ],
         "color": "#663300"
     },{
-        "index": 0,
-        "name": "Tokyo",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
-        "color": "#00ffff"
-    },{
-        "index": 0,
-        "name": "Barcelona",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
-        "color": "#00ffff"
-    },{
-        "index": 0,
+        "index": 2,
         "name": "Athens",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 1200,
+        "mortgage": 600,
+        "housePrice": 500,
+        "costs": [ 80, 400, 1000, 3000, 4500, 6000 ],
         "color": "#00ffff"
     },{
-        "index": 0,
+        "index": 3,
+        "name": "Barcelona",
+        "value": 1000,
+        "mortgage": 500,
+        "housePrice": 500,
+        "costs": [ 60, 300, 900, 2700, 4000, 5500 ],
+        "color": "#00ffff"
+    },{
+        "index": 4,
+        "name": "Tokyo",
+        "value": 1000,
+        "mortgage": 500,
+        "housePrice": 500,
+        "costs": [ 60, 300, 900, 2700, 4000, 5500 ],
+        "color": "#00ffff"
+    },{
+        "index": 5,
         "name": "Istanbul",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 1400,
+        "mortgage": 700,
+        "housePrice": 1000,
+        "costs": [ 100, 500, 1500, 4500, 6250, 7500 ],
         "color": "#ff0066"
     },{
-        "index": 0,
+        "index": 6,
         "name": "Kyiv",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 1400,
+        "mortgage": 700,
+        "housePrice": 1000,
+        "costs": [ 100, 500, 1500, 4500, 6250, 7500 ],
         "color": "#ff0066"
     },{
-        "index": 0,
+        "index": 7,
         "name": "Toronto",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 1600,
+        "mortgage": 800,
+        "housePrice": 1000,
+        "costs": [ 120, 600, 1800, 5000, 7000, 9000 ],
         "color": "#ff0066"
     },{
-        "index": 0,
+        "index": 8,
         "name": "Rome",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 1800,
+        "mortgage": 900,
+        "housePrice": 1000,
+        "costs": [ 140, 2000, 5500, 7500, 9500 ],
         "color": "#ff9900"
     },{
-        "index": 0,
+        "index": 9,
         "name": "Shanghai",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 1800,
+        "mortgage": 900,
+        "housePrice": 1000,
+        "costs": [ 140, 2000, 5500, 7500, 9500 ],
         "color": "#ff9900"
     },{
-        "index": 0,
+        "index": 10,
         "name": "Vancouver",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 2000,
+        "mortgage": 1000,
+        "housePrice": 1000,
+        "costs": [ 160, 800, 2200, 6000, 8000, 10000 ],
         "color": "#ff9900"
     },{
-        "index": 0,
+        "index": 11,
         "name": "Sydney",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 2200,
+        "mortgage": 1100,
+        "housePrice": 1500,
+        "costs": [ 180, 900, 2500, 7000, 8750, 10500 ],
         "color": "#ff3300"
     },{
-        "index": 0,
+        "index": 12,
         "name": "New York",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 2200,
+        "mortgage": 1100,
+        "housePrice": 1500,
+        "costs": [ 180, 900, 2500, 7000, 8750, 10500 ],
         "color": "#ff3300"
     },{
-        "index": 0,
+        "index": 13,
         "name": "London",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 2400,
+        "mortgage": 1200,
+        "housePrice": 1500,
+        "costs": [ 200, 1000, 3000, 7500, 9250, 11000 ],
         "color": "#ff3300"
     },{
-        "index": 0,
+        "index": 14,
         "name": "Beijing",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 2600,
+        "mortgage": 1300,
+        "housePrice": 1500,
+        "costs": [ 220, 1100, 3300, 8000, 9750, 11500 ],
         "color": "#d9d900"
     },{
-        "index": 0,
+        "index": 15,
         "name": "Hong Kong",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 2600,
+        "mortgage": 1300,
+        "housePrice": 1500,
+        "costs": [ 220, 1100, 3300, 8000, 9750, 11500 ],
         "color": "#d9d900"
     },{
-        "index": 0,
+        "index": 16,
         "name": "Jerusalem",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 2800,
+        "mortgage": 1400,
+        "housePrice": 1500,
+        "costs": [ 240, 1200, 3600, 8500, 10250, 12000 ],
         "color": "#d9d900"
     },{
-        "index": 0,
+        "index": 17,
         "name": "Paris",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 3000,
+        "mortgage": 1500,
+        "housePrice": 2000,
+        "costs": [ 260, 1300, 3900, 9000, 11000, 12750 ],
         "color": "#009933"
     },{
-        "index": 0,
+        "index": 18,
         "name": "Belgrade",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 3000,
+        "mortgage": 1500,
+        "housePrice": 2000,
+        "costs": [ 260, 1300, 3900, 9000, 11000, 12750 ],
         "color": "#009933"
     },{
-        "index": 0,
+        "index": 19,
         "name": "Cape Town",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 3200,
+        "mortgage": 1600,
+        "housePrice": 2000,
+        "costs": [ 280, 1500, 4500, 10000, 12000, 14000 ],
         "color": "#009933"
     },{
-        "index": 0,
+        "index": 20,
         "name": "Riga",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 3500,
+        "mortgage": 1750,
+        "housePrice": 2000,
+        "costs": [ 350, 1750, 5000, 11000, 13000, 15000 ],
         "color": "#0033cc"
     },{
-        "index": 0,
+        "index": 21,
         "name": "Montreal",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "value": 4000,
+        "mortgage": 2000,
+        "housePrice": 2000,
+        "costs": [ 500, 2000, 6000, 14000, 17000, 20000 ],
         "color": "#0033cc"
     },{
-        "index": 0,
-        "name": "Indusry 1",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "index": 22,
+        "name": "Ferrovie Monopoly",
+        "value": 2000,
+        "mortgage": 1000,
+        "housePrice": 0,
+        "costs": [ 250, 500, 1000, 2000 ],
         "color": "#000000"
     },{
-        "index": 0,
-        "name": "Indusry 2",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "index": 23,
+        "name": "Linee Aeree Monopoly",
+        "value": 2000,
+        "mortgage": 1000,
+        "housePrice": 0,
+        "costs": [ 250, 500, 1000, 2000 ],
         "color": "#000000"
     },{
-        "index": 0,
-        "name": "Indusry 3",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "index": 24,
+        "name": "Crociere Monopoly",
+        "value": 2000,
+        "mortgage": 1000,
+        "housePrice": 0,
+        "costs": [ 250, 500, 1000, 2000 ],
         "color": "#000000"
     },{
-        "index": 0,
-        "name": "Indusry 4",
-        "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "index": 25,
+        "name": "Agenzia Aerospaziale Monopoly",
+        "value": 2000,
+        "mortgage": 1000,
+        "housePrice": 0,
+        "costs": [ 250, 500, 1000, 2000 ],
         "color": "#000000"
     },{
-        "index": 0,
-        "name": "Service 1",
+        "index": 26,
+        "name": "Energia Solare",
         "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "mortgage": 0,
+        "housePrice": 750,
+        "costs": [ 0 ],
         "color": "#999999"
     },{
-        "index": 0,
-        "name": "Service 2",
+        "index": 27,
+        "name": "Energia Eolica",
         "value": 0,
-        "costs": [ 0, 0, 0, 0, 0 ],
+        "mortgage": 0,
+        "housePrice": 750,
+        "costs": [ 0 ],
         "color": "#999999"
     }
 ]
