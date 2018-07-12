@@ -22,7 +22,7 @@
         "mortgage": 600,
         "housePrice": 500,
         "costs": [ 80, 400, 1000, 3000, 4500, 6000 ],
-        "color": "#00ffff"
+        "color": "#22bbbb"
     },{
         "index": 3,
         "name": "Barcelona",
@@ -30,7 +30,7 @@
         "mortgage": 500,
         "housePrice": 500,
         "costs": [ 60, 300, 900, 2700, 4000, 5500 ],
-        "color": "#00ffff"
+        "color": "#22bbbb"
     },{
         "index": 4,
         "name": "Tokyo",
@@ -38,7 +38,7 @@
         "mortgage": 500,
         "housePrice": 500,
         "costs": [ 60, 300, 900, 2700, 4000, 5500 ],
-        "color": "#00ffff"
+        "color": "#22bbbb"
     },{
         "index": 5,
         "name": "Istanbul",

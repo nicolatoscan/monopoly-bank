@@ -8,7 +8,7 @@ export class SharedStringsService {
   constructor() { }
 
   public COLOR_BROWN: string = "#663300"
-  public COLOR_CYAN: string = "#00ffff"
+  public COLOR_CYAN: string = "#22bbbb"
   public COLOR_PURPLE: string = "#ff0066"
   public COLOR_ORANGE: string = "#ff9900"
   public COLOR_RED: string = "#ff3300"
