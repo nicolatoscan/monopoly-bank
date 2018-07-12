@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ILand, IHistory, Player, IPlayer } from '../models/_index';
+import { ILand, IHistory, Player, IPlayer, IPlayerExported, IPlayerLand } from '../models/_index';
 import { List } from 'linqts'
 import { SharedStringsService } from './shared-strings.service';
 
@@ -15,20 +15,49 @@ export class SharedDataService {
   constructor(private sharedStringService: SharedStringsService) { }
 
   // ----- LOCALSTORAGE
+  public IsLoadeble(): boolean {
+    return localStorage.getItem('saved') ? true : false;
+  }
+
   public ClearLocal() {
+    localStorage.removeItem('saved');
     localStorage.removeItem('players');
     localStorage.removeItem('lands');
     localStorage.removeItem('history');
   }
 
   public LoadFromLocal() {
-    this.players = new List<Player>(JSON.parse(localStorage.getItem('players')))
+    if (!this.IsLoadeble())  {
+      return;
+    }
+
     this.lands = new List<ILand>(JSON.parse(localStorage.getItem('lands')))
     this.history = new List<IHistory>(JSON.parse(localStorage.getItem('history')))
+    this.players = new List<IPlayerExported>(JSON.parse(localStorage.getItem('players'))).Select(p => {
+
+      return new Player({
+        index: p.index,
+        name: p.name,
+        balance: p.balance,
+
+        lands: new List(p.lands).Select(lExp => {
+          let playerLand: IPlayerLand = {
+            hotels: lExp.hotels,
+            houses: lExp.houses,
+            mortgaged: lExp.mortgaged,
+            landProps: this.lands.First(l => l.index == lExp.landPropsIndex)
+          }
+          return playerLand;
+        })
+
+      })
+
+    })
   }
 
   public SaveToLocal() {
-    localStorage.setItem('players', JSON.stringify(this.players.ToArray()))
+    localStorage.setItem('saved', "true")
+    localStorage.setItem('players', JSON.stringify(this.players.Select(p => p.ToExportVersion()).ToArray()))
     localStorage.setItem('lands', JSON.stringify(this.lands.ToArray()))
     localStorage.setItem('history', JSON.stringify(this.history.ToArray()))
   }
@@ -176,7 +205,18 @@ export class SharedDataService {
   public get History() {
     return this.lands;
   }
-  public AddHistory(h: IHistory) {
+  public AddHistory() {
+    let h: IHistory = {
+      index: this.history.Count() != 0 ? this.history.Last().index + 1 : 0,
+      playerStatus: this.players.Select(p => {
+        return {
+          name: p.name,
+          balance: p.balance
+        }
+      }).ToArray()
+    }
     this.history.Add(h);
+
+    this.SaveToLocal();
   }
 }

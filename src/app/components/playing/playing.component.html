@@ -5,6 +5,8 @@
       *ngFor="let p of players.ToArray()"
       [ngValue]="p">{{p.name}}</option>
     </select>
+    <button class="reset-btn" (click)="Reset()">Reset</button>
+    <button class="next-btn" (click)="Next()">NEXT ({{currentTurn}})</button>
   </header>
   <app-player-info [player]="currentPlayer" *ngIf="currentPlayer != null" class="player-info-wrapper"></app-player-info>
 </div>

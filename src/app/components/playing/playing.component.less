@@ -10,6 +10,7 @@
     header {
         width: 100vw;
         height: 40px;
+        display: flex;
         
         select {
             width: 100%;
@@ -20,6 +21,20 @@
             padding: 0 1em;
             background-color: #4CC;
             color: white;
+        }
+        button {
+            padding-left: 1em; 
+            padding-right: 1em; 
+            background-color: #288;
+            color: white;
+            font-weight: bold;
+            white-space: nowrap;
+            &.reset-btn {
+                background-color: #822;                
+            }
+            &.next-btn {
+                background-color: #288;                
+            }
         }
     }
 

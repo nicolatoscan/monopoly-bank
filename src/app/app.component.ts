@@ -16,13 +16,16 @@ export class AppComponent {
     private sharedDataService: SharedDataService
   ) {
 
-    this.dataSourceService.GetPlayersAndLands().subscribe(r => {
-      console.log("Dati caricati", r)
-      this.sharedDataService.LoadAllForNew(r.players, r.lands);
+    if (this.sharedDataService.IsLoadeble()) {
+      this.sharedDataService.LoadFromLocal()
       this.loaded = true;
-    })
-
+    } else {
+      this.dataSourceService.GetPlayersAndLands().subscribe(r => {
+        console.log("Dati caricati", r)
+        this.sharedDataService.LoadAllForNew(r.players, r.lands);
+        this.loaded = true;
+      })
+    }
   }
   
-
 }

@@ -12,12 +12,25 @@ export class PlayingComponent implements OnInit {
 
   players: List<Player>
   currentPlayer: Player = null;
+  currentTurn = 0;
 
   constructor(public shareDataService: SharedDataService) {}
 
   ngOnInit() {
     this.players = this.shareDataService.Players;
     this.currentPlayer = this.players.First();
+  }
+
+  public Next() {
+    this.shareDataService.AddHistory();
+    this.currentTurn++;
+  }
+
+  public Reset() {
+    if (confirm("Sei sicuro di voler resettare?")) {
+      this.shareDataService.ClearLocal();
+      location.reload()
+    }
   }
 
 }
