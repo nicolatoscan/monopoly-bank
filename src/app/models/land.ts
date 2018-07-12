@@ -4,5 +4,6 @@ export interface ILand {
     name: string,
     value: number,
     costs: number[],
+    housePrice: number,
     color: string
 }

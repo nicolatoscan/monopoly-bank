@@ -51,6 +51,7 @@ export class DataSourceService {
           l.value = Number(l.value)
           l.costs = new List(l.costs).Select(c => Number(c)).ToArray()
           l.mortgage = Number(l.mortgage)
+          l.housePrice = Number(l.housePrice)
         });
         return lands;
       })

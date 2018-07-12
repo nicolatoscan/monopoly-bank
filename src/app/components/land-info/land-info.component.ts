@@ -41,6 +41,8 @@ export class LandInfoComponent implements OnInit {
       this.nHouses = 0
     }
 
+    let cost = (+this.nHouses - +propLand.houses) * +propLand.landProps.housePrice;
+    this.shareDataService.TransferMoney(+cost, this.player.index)
     propLand.houses = this.nHouses;
   }
   public addHotel(n: number) {
@@ -49,12 +51,16 @@ export class LandInfoComponent implements OnInit {
       return;
     }
 
+    let cost = 0;
     if (n == 1 && this.nHotels == 0 && this.nHouses == 4) {
       this.nHotels = 1;
       this.nHouses = 0;
+      cost = +propLand.landProps.housePrice;
     } else if (n < 0) {
       this.nHotels = 0
+      cost = +prompt("A quanto l'hai venduto?");
     }
+    this.shareDataService.TransferMoney(-cost, this.player.index)
     propLand.hotels = this.nHotels;
     propLand.houses = this.nHouses;
 
