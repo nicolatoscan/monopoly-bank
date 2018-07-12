@@ -4,7 +4,8 @@ import { List } from 'linqts';
 export interface IPlayerLand {
   landProps: ILand,
   houses: number,
-  hotels: number
+  hotels: number,
+  mortgaged: boolean,
 }
 
 export interface IPlayer {
@@ -36,7 +37,8 @@ export class Player implements IPlayer {
           this.lands.Add({
               houses: 0,
               hotels: 0,
-              landProps: land
+              landProps: land,
+              mortgaged: false
           })
       }
   }

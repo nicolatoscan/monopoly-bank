@@ -13,7 +13,20 @@
       <button class="btn-send" (click)="sendMoney(+moneyInput.value, bb.value)">Send</button>
     </div>
   </div>
-  <app-land-info
-    [nHouses]="2" [nHotels]="1" [player]="player" [land]="land"
-    class="app-land-info"></app-land-info>
+  <b>I miei terreni</b>
+  <div class="land-wrapper">
+    <app-land-info
+      *ngFor="let l of _player.lands.ToArray()"
+      [mortgaged]="l.mortgaged" [nHouses]="l.houses" [nHotels]="l.hotels" [player]="player" [land]="l.landProps"
+      [mine]="true" class="app-land-info"></app-land-info>
+  </div>
+
+  <br>
+  <b>Altri terreni</b>
+  <div class="land-wrapper">
+    <app-land-info
+      *ngFor="let l of NotPlayerLands()"
+      [player]="player" [land]="l" [mine]="false"
+      class="app-land-info"></app-land-info>
+  </div>
 </div>

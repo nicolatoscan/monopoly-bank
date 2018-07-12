@@ -5,6 +5,7 @@ import { map, catchError } from 'rxjs/operators';
 
 import { List } from 'linqts'
 import { IPlayer, ILand } from '../models/_index';
+import { NUMBER_FORMAT_REGEXP } from '../../../node_modules/@angular/common/src/i18n/format_number';
 
 
 @Injectable({
@@ -49,6 +50,7 @@ export class DataSourceService {
           l.index = Number(l.index)
           l.value = Number(l.value)
           l.costs = new List(l.costs).Select(c => Number(c)).ToArray()
+          l.mortgage = Number(l.mortgage)
         });
         return lands;
       })

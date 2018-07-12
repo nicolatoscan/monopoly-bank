@@ -1,6 +1,7 @@
 .land-info-wrapper {
-    width: 150px;
+    width: 200px;
     border: 1px solid black;
+    margin: 10px 10px 0 10px;
 
     h2 {
         margin: 3px;
@@ -15,6 +16,17 @@
         p {
             margin: 0;
         }
+
+        .btn-wrapper {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            button {
+                font-size: 1em;
+                width: 47%;
+                line-height: 35px;
+            }
+        }
         
         .hotel-hoses-handler {
             display: flex;
@@ -27,9 +39,6 @@
                 width: 40%;
                 height: 30px;
                 font-size: 25px;
-                &:active {
-                    filter: brightness(95%);
-                }
             }
             p {
                 width: 20%;

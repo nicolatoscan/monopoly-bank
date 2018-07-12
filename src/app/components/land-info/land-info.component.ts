@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Player, ILand } from '../../models/_index';
+import { Player, ILand, IPlayerLand } from '../../models/_index';
 import { List } from 'linqts';
 import { SharedDataService } from '../../services/shared-data.service';
 
@@ -16,17 +16,23 @@ export class LandInfoComponent implements OnInit {
   @Input() mine: boolean;
   @Input() nHouses: number;
   @Input() nHotels: number;
+  @Input() mortgaged: boolean;
 
   constructor(public shareDataService: SharedDataService) { }
 
   ngOnInit() {
   }
 
-  public CostOnLand(): number {
+  public CostOnLand(): { cost: number, owner: Player } {
     return this.shareDataService.CostOnLand(this.player, this.land);
   }
 
   public addHouse(n: number) {
+    let propLand = this.player.lands.FirstOrDefault(l => this.land.index == l.landProps.index);
+    if (!propLand) {
+      return;
+    }
+
     this.nHouses = +this.nHouses + +n;
     if (this.nHouses > 4) {
       this.nHouses = 4
@@ -34,14 +40,44 @@ export class LandInfoComponent implements OnInit {
     if (this.nHouses < 0) {
       this.nHouses = 0
     }
+
+    propLand.houses = this.nHouses;
   }
   public addHotel(n: number) {
-    if (n > 0 && this.nHotels == 0 && this.nHouses == 4) {
+    let propLand = this.player.lands.FirstOrDefault(l => this.land.index == l.landProps.index);
+    if (!propLand) {
+      return;
+    }
+
+    if (n == 1 && this.nHotels == 0 && this.nHouses == 4) {
       this.nHotels = 1;
-      this.nHouses = 4;
+      this.nHouses = 0;
     } else if (n < 0) {
       this.nHotels = 0
     }
+    propLand.hotels = this.nHotels;
+    propLand.houses = this.nHouses;
+
+  }
+
+  public Buy() {
+    this.shareDataService.PlayerBuysLand(this.player, this.land)
+  }
+  public Sell() {
+    this.shareDataService.PlayerSellsLand(this.player, this.land)
+  }
+  public Pay() {
+    let c = this.CostOnLand()
+
+    this.shareDataService.TransferMoney(+c.cost, this.player.index, (c.owner ? c.owner.index : null))
+  }
+
+  public Mortgage() {
+    let propLand = this.player.lands.FirstOrDefault(l => this.land.index == l.landProps.index);
+
+    propLand.mortgaged = !propLand.mortgaged;
+    this.shareDataService.TransferMoney((propLand.mortgaged ? -1 : +1) * propLand.landProps.mortgage, this.player.index)
+
   }
 
 }

@@ -54,45 +54,59 @@ export class SharedDataService {
   public PlayerWithLand(land: ILand): Player {
     return this.players.FirstOrDefault(p => p.HasLand(land.index))
   }
-  public CostOnLand(player: Player, land: ILand): number {
+  public CostOnLand(player: Player, land: ILand): { cost: number, owner: Player } {
     let owner = this.PlayerWithLand(land);
-    if (!owner || owner === player) {
-      return 0;
+    let r = { cost: 0, owner: owner }
+    if (!owner) {
+      return r;
     }
 
+
     let landProp = owner.lands.Single(l => l.landProps == land)
-    let nLandColor = owner.HowManyLandsOf(land.color);
+    let nLandColor = 0;
+    if (landProp.mortgaged) {
+      r.owner = null;
+    } else {
+      nLandColor = owner.HowManyLandsOf(land.color);
+    }
 
     //SERVICE
     if (land.color == this.sharedStringService.COLOR_SERVICE) {
-      return land.costs[nLandColor - 1]
+      r.cost = land.costs[nLandColor - 1]
+      return r;
     }
 
     //INDUSTRY
     if (land.color == this.sharedStringService.COLOR_INDUSTRY) {
       let nDice = prompt("Risultato dadi");
-      return Number(nDice) * 10000 * (nLandColor == 1 ? 4 : 10)
+      r.cost = Number(nDice) * 10000 * (nLandColor == 1 ? 4 : 10)
+      return r;
     }
 
     //HOUSES
     if (landProp.houses != 0) {
-      return land.costs[landProp.houses]
+      r.cost = +land.costs[landProp.houses] + +((landProp.hotels != 0) ? land.costs[5] : 0)
+      return r;
     }
     //HOTEL
     if (landProp.hotels != 0) {
-      return land.costs[5];
+      r.cost = land.costs[5];
+      return r;
     }
 
     //ONLY PROPERTY
     if (land.color == this.sharedStringService.COLOR_BLUE || land.color == this.sharedStringService.COLOR_BROWN) {
       if (nLandColor == 2) {
-        return land.costs[0] * 2
+        r.cost = land.costs[0] * 2
+        return r;
       }
     } else if (nLandColor == 3) {
-      return land.costs[0] * 2
+      r.cost = land.costs[0] * 2
+      return r;
     }
 
-    return land.costs[0];
+    r.cost = land.costs[0];
+    return r;
 
   }
   public PlayerBuysLand(player: Player, land: ILand) {
@@ -105,18 +119,29 @@ export class SharedDataService {
     if (owner) {
       owner.lands = owner.lands.Where(l => l.landProps.index != land.index)
       let c = Number(prompt("Quanto l'ha pagata"));
-      owner.balance += c;
-      player.balance -= c;
+      owner.balance += +c;
+      player.balance -= +c;
     } else {
-      player.balance -= land.value;
+      player.balance -= +land.value;
     }
 
     player.lands.Add({
       hotels: 0,
       houses: 0,
-      landProps: land
+      landProps: land,
+      mortgaged: false
     })
 
+  }
+  public PlayerSellsLand(player: Player, land: ILand) {
+    let owner = this.PlayerWithLand(land);
+    if (owner != player) {
+      return;
+    }
+
+    owner.lands = owner.lands.Where(l => l.landProps.index != land.index)
+    let c = Number(prompt("A quanto l'ha venduta"));
+    owner.balance += +c;
   }
   public TransferMoney(value: number, fromPlayerIndex: number, toPlayerIndex?: number) {
     let fromPlayer = this.players.FirstOrDefault(p => p.index == fromPlayerIndex)
