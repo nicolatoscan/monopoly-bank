@@ -2,12 +2,15 @@
   <header>
     <select [(ngModel)]="currentPlayer">
       <option
-      *ngFor="let p of players.ToArray()"
-      [ngValue]="p">{{p.name}}</option>
+        *ngFor="let p of players.ToArray()"
+        [ngValue]="p">{{p.name}} ({{p.balance}} €)</option>
     </select>
     <button class="reset-btn" (click)="Reset()">Reset</button>
     <button class="next-btn" (click)="Next()">NEXT ({{currentTurn}})</button>
   </header>
+  <p class="current-status-p">
+    <span *ngFor="let p of BalancedUser()">{{p.name}} ({{p.balance}} €) | </span>
+  </p>
   <app-player-info [player]="currentPlayer" *ngIf="currentPlayer != null" class="player-info-wrapper"></app-player-info>
 </div>
 <app-info-panel></app-info-panel>

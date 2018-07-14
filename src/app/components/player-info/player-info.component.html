@@ -16,7 +16,7 @@
   <b>I miei terreni</b>
   <div class="land-wrapper">
     <app-land-info
-      *ngFor="let l of _player.lands.ToArray()"
+      *ngFor="let l of landOrdered(_player.lands)"
       [mortgaged]="l.mortgaged" [nHouses]="l.houses" [nHotels]="l.hotels" [player]="player" [land]="l.landProps"
       [mine]="true" class="app-land-info"></app-land-info>
   </div>

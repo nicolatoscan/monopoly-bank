@@ -83,7 +83,7 @@ export class SharedDataService {
   public PlayerWithLand(land: ILand): Player {
     return this.players.FirstOrDefault(p => p.HasLand(land.index))
   }
-  public CostOnLand(player: Player, land: ILand): { cost: number, owner: Player } {
+  public CostOnLand(player: Player, land: ILand, askIfNecessary = false): { cost: number, owner: Player } {
     let owner = this.PlayerWithLand(land);
     let r = { cost: 0, owner: owner }
     if (!owner) {
@@ -107,8 +107,11 @@ export class SharedDataService {
 
     //INDUSTRY
     if (land.color == this.sharedStringService.COLOR_INDUSTRY) {
-      let nDice = prompt("Risultato dadi");
-      r.cost = Number(nDice) * 10000 * (nLandColor == 1 ? 4 : 10)
+      let nDice = 1;
+      if (askIfNecessary) {
+        let nDice = prompt("Risultato dadi");
+      }
+      r.cost = Number(nDice) * 10 * (nLandColor == 1 ? 4 : 10)
       return r;
     }
 

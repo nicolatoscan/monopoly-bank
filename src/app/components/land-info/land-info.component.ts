@@ -73,8 +73,7 @@ export class LandInfoComponent implements OnInit {
     this.shareDataService.PlayerSellsLand(this.player, this.land)
   }
   public Pay() {
-    let c = this.CostOnLand()
-
+    let c = this.shareDataService.CostOnLand(this.player, this.land, true);
     this.shareDataService.TransferMoney(+c.cost, this.player.index, (c.owner ? c.owner.index : null))
   }
 

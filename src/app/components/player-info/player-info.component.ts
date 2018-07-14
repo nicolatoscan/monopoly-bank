@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Player, ILand } from '../../models/_index';
+import { Player, ILand, IPlayerLand } from '../../models/_index';
 import { SharedDataService } from '../../services/shared-data.service';
 import { List } from 'linqts';
+import { SharedStringsService } from '../../services/shared-strings.service';
 
 @Component({
   selector: 'app-player-info',
@@ -26,7 +27,7 @@ export class PlayerInfoComponent implements OnInit {
     return this._player;
   }
 
-  constructor(public shareDataService: SharedDataService) {
+  constructor(public shareDataService: SharedDataService, public sharedStringService: SharedStringsService) {
   }
 
   ngOnInit() {
@@ -40,7 +41,11 @@ export class PlayerInfoComponent implements OnInit {
   }
 
   public NotPlayerLands(): ILand[] {
-    return this.lands.Where(l => !this.player.lands.Any(ll => ll.landProps.index == l.index)).ToArray()
+    return this.lands.Where(l => !this.player.lands.Any(ll => ll.landProps.index == l.index)).OrderBy(l => l.index).ToArray()
+  }
+
+  public landOrdered(lands: List<IPlayerLand>): IPlayerLand[] {
+    return lands.OrderBy(l => l.landProps.index).ToArray()
   }
 
 }

@@ -24,6 +24,7 @@ export class PlayingComponent implements OnInit {
   public Next() {
     this.shareDataService.AddHistory();
     this.currentTurn++;
+    this.players.OrderBy(p => p.balance).ToArray()
   }
 
   public Reset() {
@@ -32,5 +33,10 @@ export class PlayingComponent implements OnInit {
       location.reload()
     }
   }
+
+  public BalancedUser(): Player[] {
+    return this.players.OrderByDescending(p => p.balance).ToArray()
+  }
+
 
 }
